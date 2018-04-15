@@ -6,10 +6,11 @@ class Event {
 public:
 	Event(string name, int time, int val, int sortcount);
 
-	void setEventName(string ref);
+	//Crossed out
+	/*void setEventName(string ref);
 	void setTime(int ref);
 	void setEventValue(int ref);
-	void setSortCount(int ref);
+	void setSortCount(int ref);*/
 
 	int getEventValue();
 	int getEventTime();
