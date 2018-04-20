@@ -1,22 +1,27 @@
+#ifndef GATE_HEADER
+#define GATE_HEADER
 #include <iostream>
+#include <string>
+#include "wire.h"
+#include <vector>
 using namespace std;
 
 class Gate {
-public: 
-	Gate(string type, int in1, int in2, int out);
+public:
+	Gate();
+	//Gate(string reftype, Wire* refin1, Wire* refin2, Wire* refout);
+	Gate(string reftype, int refin1, int refin2, int refout);
 
-	//Not Necessary
-	/*void setType(string ref);
-	void setDelay(int ref);
+	void setType(string ref);
+	void setDelay(string ref);
 	void setIn1(int ref);
 	void setIn2(int ref);
-	void setOut(int ref);*/
+	void setOut(int ref);
 
 	int getOut();
 	int getDelay();
 	string getType();
-	//Getter for inputs also?
-	
+
 	bool gateOutput();
 
 private:
@@ -25,7 +30,12 @@ private:
 	int in1;
 	int in2;
 	int out;
+	//Wire* in1;
+	//Wire* in2;
+	//Wire* out;
+
 
 };
 
+#endif
 
