@@ -6,35 +6,30 @@
 #include <vector>
 using namespace std;
 
+class Wire;
 class Gate {
 public:
 	Gate();
-	//Gate(string reftype, Wire* refin1, Wire* refin2, Wire* refout);
-	Gate(string reftype, int refin1, int refin2, int refout);
 
 	void setType(string ref);
 	void setDelay(string ref);
-	void setIn1(int ref);
-	void setIn2(int ref);
-	void setOut(int ref);
+	void setIn1(Wire* ref);
+	void setIn2(Wire* ref);
+	void setOut(Wire* ref);
 
 	int getOut();
 	int getDelay();
 	string getType();
 
-	bool gateOutput();
+	int gateOutput();
 
 private:
 	string type;
 	int delay;
-	int in1;
-	int in2;
-	int out;
-	//Wire* in1;
-	//Wire* in2;
-	//Wire* out;
 
-
+	Wire* in1;
+	Wire* in2;
+	Wire* out;
 };
 
 #endif
