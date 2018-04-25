@@ -3,44 +3,57 @@
 using namespace std;
 
 Wire::Wire(){
-	value = "";
+	value = -1;
 	name = "";
 	index = 0;
-	input = false;
+	used = "EMPTY";
 }
 
 //Wire::Wire(string val, string nm, int index, vector<Gate*> &connections){}
 
-void Wire::setWireValue(string ref)
+void Wire::setWireValue(int ref)
 {
+	value = ref;
 }
 
-void Wire::setWireName(string name)
+void Wire::setWireName(string nameref)
 {
+	name = nameref;
 }
 
 void Wire::setIndex(int ref)
 {
+	index = ref;
 }
 
-void Wire::setInput(bool ref)
+void Wire::setUsedAs(string ref)
 {
-	input = ref;
+	used = ref;
 }
 
 //void Wire::setDrivers(vector<Gate*> ref){}
 
-string Wire::getWireValue()
+void Wire::addDriver(Gate* gateref)
 {
-	return string();
+	drivers.push_back(gateref);
+}
+
+string Wire::getUsed()
+{
+	return used;
+}
+
+int Wire::getWireValue()
+{
+	return value;
 }
 
 string Wire::getWireName()
 {
-	return string();
+	return name;
 }
 
 int Wire::getIndex()
 {
-	return 0;
+	return index;
 }
